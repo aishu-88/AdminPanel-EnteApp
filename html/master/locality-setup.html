@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+<head>
+    <meta charset="utf-8" />
+    <title>Panchayath / Locality Setup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Staff Management Dashboard" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link href="assets/libs/jsvectormap/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/layout.js"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="index.html" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+                        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger material-shadow-none" id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                        <!-- App Search-->
+                        <form class="app-search d-none d-md-block">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Search..." autocomplete="off" id="search-options" value="">
+                                <span class="mdi mdi-magnify search-widget-icon"></span>
+                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                    <span class="text-start ms-xl-2">
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="dropdown-header">Welcome Anna!</h6>
+                                <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                                <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="pages-profile-settings.html"><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
+                                <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+   
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu">
+                    </div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="index.html">
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span></a>
+                        </li> <!-- end Dashboard Menu -->
+                 
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">User Management</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarUser" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarUser">
+                                <i class="ri-account-circle-line"></i>
+                                <span data-key="t-User">Users</span>
+                            </a>
+                 
+                            <div class="collapse menu-dropdown" id="sidebarUser">
+                                <ul class="nav nav-sm flex-column">
+                 
+                                    <li class="nav-item">
+                                        <a href="all-users.html" class="nav-link" data-key="t-allusers">
+                                            All Users
+                                        </a>
+                                    </li>
+                 
+                                    <li class="nav-item">
+                                        <a href="service-provider.html" class="nav-link" data-key="t-providers">
+                                            Service Providers
+                                        </a>
+                                    </li>
+                 
+                                    <li class="nav-item">
+                                        <a href="shop-owners.html" class="nav-link" data-key="t-shop-owners">
+                                            Shop Owners
+                                        </a>
+                                    </li>
+                 
+                                    <li class="nav-item">
+                                        <a href="verification.html" class="nav-link" data-key="t-verification-requests">
+                                            Verification Requests
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="blocked-user.html" class="nav-link" data-key="t-blocked-users">
+                                            Blocked Users
+                                        </a>
+                                    </li>
+                 
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarlist" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarlist">
+                                <i class="ri-list-unordered"></i>
+                                <span data-key="t-list">Listings</span>
+                            </a>
+                 
+                            <div class="collapse menu-dropdown" id="sidebarlist">
+                                <ul class="nav nav-sm flex-column">
+                 
+                                    <li class="nav-item">
+                                        <a href="all-list.html" class="nav-link" data-key="t-all-listings">
+                                            All listings
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pending-approval.html" class="nav-link" data-key="t-pending-approvals">
+                                            Pending Approvals
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="featured-list.html" class="nav-link" data-key="t-featured-listings">
+                                            Featured Listings
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="categories.html" class="nav-link" data-key="t-categories">
+                                            Categories
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Staff Management Section</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarStaff" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarStaff">
+                                <i class="ri-team-line"></i>
+                                <span data-key="t-list">Staff Management </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarStaff">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="employee.html" class="nav-link" data-key="t-notices">
+                                            Employees
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="permission.html" class="nav-link" data-key="t-emergency-contacts">
+                                            Roles & Permissions </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="activity-log.html" class="nav-link" data-key="t-announcements">
+                                            Activity Logs </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarAdvertisement" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarAdvertisement">
+                                <i class="ri-megaphone-line"></i>
+                                <span data-key="t-list">Advertisements </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarAdvertisement">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="all-ads.html" class="nav-link" data-key="t-all-ads">
+                                            All Advertisements
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="create-ads.html" class="nav-link" data-key="t-create-ad">
+                                            Create New Ad </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pending-ads.html" class="nav-link" data-key="t-pending-ad">
+                                            Pending Ads </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ad-slot-mngmnt.html" class="nav-link" data-key="t-pending-ad">
+                                            Ads Slots Management </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarOffer" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarOffer">
+                                <i class="ri-coupon-3-line"></i>
+                                <span data-key="t-list">Offers & Promotions </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarOffer">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="all-offer.html" class="nav-link" data-key="t-all-offers">
+                                            All Offers
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="add-offers.html" class="nav-link" data-key="t-create-offer">
+                                            Create Offer </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="sheduled-offer.html" class="nav-link" data-key="t-scheduled-offers">
+                                            Scheduled Offers </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarReward" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarReward">
+                                <i class="ri-trophy-line"></i>
+                                <span data-key="t-list">Rewards System </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarReward">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="daily-challenge.html" class="nav-link" data-key="t-challenges">
+                                            Daily Challenges
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="spin-win.html" class="nav-link" data-key="t-spin">
+                                            Spin & Win Setup </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="scratch-card.html" class="nav-link" data-key="t-scratch-cards">
+                                            Scratch Cards </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="reward.html" class="nav-link" data-key="t-reward-rules">
+                                            Reward Rules </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarGift" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarGift">
+                                <i class="ri-gift-line"></i>
+                                <span data-key="t-list"> Gift Cards & Wallet </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarGift">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="gift-card-mngmnt.html" class="nav-link" data-key="t-gift-card-management">
+                                            Gift Card Management
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="wallet-transaction.html" class="nav-link" data-key="t-wallet-transactions">
+                                            Wallet Transactions </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="redemption-req.html" class="nav-link" data-key="t-redemption">
+                                            Redemption Requests </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Information Section</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarInfo" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarInfo">
+                                <i class="ri-information-line"></i>
+                                <span data-key="t-list">Information & Notices </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarInfo">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="panchayath-notices.html" class="nav-link" data-key="t-notices">
+                                            Panchayath Notices
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="emergency-contacts.html" class="nav-link" data-key="t-emergency-contacts">
+                                            Emergency Contacts </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="local-announcements.html" class="nav-link" data-key="t-announcements">
+                                            Local Announcements </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="reports.html">
+                                <i class="ri-file-chart-line"></i> <span data-key="t-report">Reports</span></a>
+                        </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Profile & Settings</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarProfile" data-bs-toggle="collapse" role="button"
+                                aria-expanded="true" aria-controls="sidebarProfile">
+                                <i class="ri-settings-3-line"></i>
+                                <span data-key="t-list">Settings</span>
+                            </a>
+                            <div class="collapse menu-dropdown show" id="sidebarProfile">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="general-settings.html" class="nav-link" data-key="t-notices">
+                                            General Settings
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="app-configuration.html" class="nav-link" data-key="t-emergency-contacts">
+                                            App Configuration </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="panchayath-setup.html" class="nav-link active" data-key="t-announcements">
+                                            Panchayath / Locality Setup </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="notification-settings.html" class="nav-link" data-key="t-announcements">
+                                            Notification Settings</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="pages-profile-settings.html">
+                                <i class="ri-file-chart-line"></i> <span data-key="t-profile">Profile</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="auth-logout-basic.html">
+                                <i class="ri-file-chart-line"></i> <span data-key="t-logout">Logout</span></a>
+                        </li>
+                 
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <div class="vertical-overlay"></div>
+         
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- Page Title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+                                <h4 class="mb-sm-0">Panchayath / Locality Setup</h4>
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Profile & Settings</a></li>
+                                        <li class="breadcrumb-item active">Panchayath / Locality Setup</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Setup Controls -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="position-relative me-3">
+                                    <input type="text" class="form-control" placeholder="Search zones/areas/locations..." id="setupSearch">
+                                    <span class="mdi mdi-magnify position-absolute end-0 top-50 translate-middle-y pe-3 text-muted"></span>
+                                </div>
+                                <select class="form-select w-auto" id="typeFilter">
+                                    <option>All Types</option>
+                                    <option>Zone</option>
+                                    <option>Area</option>
+                                    <option>Location</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addSetupModal">
+                                <i class="ri-add-line me-1"></i> Add New Zone/Area/Location
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="ri-map-pin-line me-1"></i> View Map
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Locality Setup Table -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1">Manage Zones, Areas, and Locations</h4>
+                                    <div class="flex-shrink-0">
+                                        <small class="text-muted">Total Entries: <span id="totalEntries">8</span></small>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive table-card">
+                                        <table class="table table-borderless table-centered align-middle table-nowrap mb-0">
+                                            <thead class="text-muted table-light">
+                                                <tr>
+                                                    <th scope="col">Type</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Parent Zone/Area</th>
+                                                    <th scope="col">Coordinates</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="badge bg-primary-subtle text-primary">Zone</span></td>
+                                                    <td>Central Panchayath Zone</td>
+                                                    <td>-</td>
+                                                    <td>17.3850° N, 78.4867° E</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewSetupModal" onclick="loadSetupData(1)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editSetupModal" onclick="loadSetupData(1)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-info-subtle text-info">Area</span></td>
+                                                    <td>Village Square Area</td>
+                                                    <td>Central Panchayath Zone</td>
+                                                    <td>17.3860° N, 78.4870° E</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewSetupModal" onclick="loadSetupData(2)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editSetupModal" onclick="loadSetupData(2)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-warning-subtle text-warning">Location</span></td>
+                                                    <td>Community Hall</td>
+                                                    <td>Village Square Area</td>
+                                                    <td>17.3855° N, 78.4865° E</td>
+                                                    <td><span class="badge bg-warning-subtle text-warning">Pending</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewSetupModal" onclick="loadSetupData(3)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editSetupModal" onclick="loadSetupData(3)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-primary-subtle text-primary">Zone</span></td>
+                                                    <td>Eastern Locality Zone</td>
+                                                    <td>-</td>
+                                                    <td>17.3900° N, 78.5000° E</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewSetupModal" onclick="loadSetupData(4)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editSetupModal" onclick="loadSetupData(4)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-info-subtle text-info">Area</span></td>
+                                                    <td>Market Area</td>
+                                                    <td>Eastern Locality Zone</td>
+                                                    <td>17.3910° N, 78.5010° E</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewSetupModal" onclick="loadSetupData(5)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editSetupModal" onclick="loadSetupData(5)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-warning-subtle text-warning">Location</span></td>
+                                                    <td>Local Market Stall</td>
+                                                    <td>Market Area</td>
+                                                    <td>17.3905° N, 78.5005° E</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewSetupModal" onclick="loadSetupData(6)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editSetupModal" onclick="loadSetupData(6)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-primary-subtle text-primary">Zone</span></td>
+                                                    <td>Western Residential Zone</td>
+                                                    <td>-</td>
+                                                    <td>17.3800° N, 78.4700° E</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewSetupModal" onclick="loadSetupData(7)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editSetupModal" onclick="loadSetupData(7)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="badge bg-info-subtle text-info">Area</span></td>
+                                                    <td>Residential Colony</td>
+                                                    <td>Western Residential Zone</td>
+                                                    <td>17.3810° N, 78.4710° E</td>
+                                                    <td><span class="badge bg-warning-subtle text-warning">Pending</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewSetupModal" onclick="loadSetupData(8)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editSetupModal" onclick="loadSetupData(8)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Map Placeholder -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Locality Map View</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="mapPlaceholder" class="bg-light rounded p-4 text-center" style="height: 400px;">
+                                        <i class="ri-map-pin-line fs-1 text-muted mb-2 d-block"></i>
+                                        <p class="text-muted mb-0">Interactive Map Integration Placeholder</p>
+                                        <small class="text-muted">Integrate Google Maps API for visual zone/area management</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Admin Panel.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Add New Setup Modal -->
+    <div class="modal fade" id="addSetupModal" tabindex="-1" aria-labelledby="addSetupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addSetupModalLabel">Add New Zone/Area/Location</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addSetupForm">
+                        <div class="mb-3">
+                            <label for="setupType" class="form-label">Type</label>
+                            <select class="form-select" id="setupType" required>
+                                <option value="">Select Type</option>
+                                <option value="Zone">Zone</option>
+                                <option value="Area">Area</option>
+                                <option value="Location">Location</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="setupName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="setupName" placeholder="Enter name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="parentSetup" class="form-label">Parent Zone/Area</label>
+                            <select class="form-select" id="parentSetup">
+                                <option value="">None (Top Level)</option>
+                                <option value="central-zone">Central Panchayath Zone</option>
+                                <option value="eastern-zone">Eastern Locality Zone</option>
+                                <option value="western-zone">Western Residential Zone</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="latitude" class="form-label">Latitude</label>
+                            <input type="number" step="any" class="form-control" id="latitude" placeholder="e.g., 17.3850">
+                        </div>
+                        <div class="mb-3">
+                            <label for="longitude" class="form-label">Longitude</label>
+                            <input type="number" step="any" class="form-control" id="longitude" placeholder="e.g., 78.4867">
+                        </div>
+                        <div class="mb-3">
+                            <label for="setupStatus" class="form-label">Status</label>
+                            <select class="form-select" id="setupStatus">
+                                <option selected>Active</option>
+                                <option>Pending</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveSetup()">Save Setup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- View Setup Modal -->
+    <div class="modal fade" id="viewSetupModal" tabindex="-1" aria-labelledby="viewSetupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewSetupModalLabel">View Setup Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="viewSetupDetails">
+                        <!-- Dynamic content loaded here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Setup Modal -->
+    <div class="modal fade" id="editSetupModal" tabindex="-1" aria-labelledby="editSetupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editSetupModalLabel">Edit Setup</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editSetupForm">
+                        <!-- Dynamic content loaded here -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="updateSetup()">Update Setup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script>
+        // Sample data for modals
+        const setupData = {
+            1: { type: 'Zone', name: 'Central Panchayath Zone', parent: '-', lat: '17.3850', lng: '78.4867', status: 'Active' },
+            2: { type: 'Area', name: 'Village Square Area', parent: 'Central Panchayath Zone', lat: '17.3860', lng: '78.4870', status: 'Active' },
+            3: { type: 'Location', name: 'Community Hall', parent: 'Village Square Area', lat: '17.3855', lng: '78.4865', status: 'Pending' },
+            4: { type: 'Zone', name: 'Eastern Locality Zone', parent: '-', lat: '17.3900', lng: '78.5000', status: 'Active' },
+            5: { type: 'Area', name: 'Market Area', parent: 'Eastern Locality Zone', lat: '17.3910', lng: '78.5010', status: 'Active' },
+            6: { type: 'Location', name: 'Local Market Stall', parent: 'Market Area', lat: '17.3905', lng: '78.5005', status: 'Active' },
+            7: { type: 'Zone', name: 'Western Residential Zone', parent: '-', lat: '17.3800', lng: '78.4700', status: 'Active' },
+            8: { type: 'Area', name: 'Residential Colony', parent: 'Western Residential Zone', lat: '17.3810', lng: '78.4710', status: 'Pending' }
+        };
+
+        function loadSetupData(id) {
+            const data = setupData[id];
+            if (document.getElementById('viewSetupDetails')) {
+                document.getElementById('viewSetupDetails').innerHTML = `
+                    <p><strong>Type:</strong> <span class="badge bg-${data.type === 'Zone' ? 'primary' : data.type === 'Area' ? 'info' : 'warning'}-subtle text-${data.type.toLowerCase()}">${data.type}</span></p>
+                    <p><strong>Name:</strong> ${data.name}</p>
+                    <p><strong>Parent:</strong> ${data.parent}</p>
+                    <p><strong>Coordinates:</strong> ${data.lat}° N, ${data.lng}° E</p>
+                    <p><strong>Status:</strong> <span class="badge bg-${data.status === 'Active' ? 'success' : 'warning'}-subtle text-${data.status.toLowerCase()}">${data.status}</span></p>
+                `;
+            }
+            if (document.getElementById('editSetupForm')) {
+                document.getElementById('editSetupForm').innerHTML = `
+                    <input type="hidden" id="editId" value="${id}">
+                    <div class="mb-3">
+                        <label for="editType" class="form-label">Type</label>
+                        <select class="form-select" id="editType" required>
+                            <option ${data.type === 'Zone' ? 'selected' : ''}>Zone</option>
+                            <option ${data.type === 'Area' ? 'selected' : ''}>Area</option>
+                            <option ${data.type === 'Location' ? 'selected' : ''}>Location</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="editName" value="${data.name}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editParent" class="form-label">Parent Zone/Area</label>
+                        <select class="form-select" id="editParent">
+                            <option value="">None (Top Level)</option>
+                            <option value="central-zone" ${data.parent === 'Central Panchayath Zone' ? 'selected' : ''}>Central Panchayath Zone</option>
+                            <option value="eastern-zone" ${data.parent === 'Eastern Locality Zone' ? 'selected' : ''}>Eastern Locality Zone</option>
+                            <option value="western-zone" ${data.parent === 'Western Residential Zone' ? 'selected' : ''}>Western Residential Zone</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editLat" class="form-label">Latitude</label>
+                        <input type="number" step="any" class="form-control" id="editLat" value="${data.lat}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editLng" class="form-label">Longitude</label>
+                        <input type="number" step="any" class="form-control" id="editLng" value="${data.lng}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editStatus" class="form-label">Status</label>
+                        <select class="form-select" id="editStatus">
+                            <option ${data.status === 'Active' ? 'selected' : ''}>Active</option>
+                            <option ${data.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                        </select>
+                    </div>
+                `;
+            }
+        }
+
+        function saveSetup() {
+            // Simulate save
+            alert('New setup saved successfully!');
+            bootstrap.Modal.getInstance(document.getElementById('addSetupModal')).hide();
+        }
+
+        function updateSetup() {
+            // Simulate update
+            alert('Setup updated successfully!');
+            bootstrap.Modal.getInstance(document.getElementById('editSetupModal')).hide();
+        }
+    </script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

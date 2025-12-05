@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+<head>
+    <meta charset="utf-8" />
+    <title>Emergency Contacts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Staff Management Dashboard" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link href="assets/libs/jsvectormap/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/layout.js"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="index.html" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+                        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger material-shadow-none" id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                        <!-- App Search-->
+                        <form class="app-search d-none d-md-block">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Search..." autocomplete="off" id="search-options" value="">
+                                <span class="mdi mdi-magnify search-widget-icon"></span>
+                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                    <span class="text-start ms-xl-2">
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="dropdown-header">Welcome Anna!</h6>
+                                <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                                <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="pages-profile-settings.html"><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
+                                <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+   
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu">
+                    </div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="index.html">
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span></a>
+                        </li> <!-- end Dashboard Menu -->
+                 
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">User Management</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarUser" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarUser">
+                                <i class="ri-account-circle-line"></i>
+                                <span data-key="t-User">Users</span>
+                            </a>
+                 
+                            <div class="collapse menu-dropdown" id="sidebarUser">
+                                <ul class="nav nav-sm flex-column">
+                 
+                                    <li class="nav-item">
+                                        <a href="all-users.html" class="nav-link" data-key="t-allusers">
+                                            All Users
+                                        </a>
+                                    </li>
+                 
+                                    <li class="nav-item">
+                                        <a href="service-provider.html" class="nav-link" data-key="t-providers">
+                                            Service Providers
+                                        </a>
+                                    </li>
+                 
+                                    <li class="nav-item">
+                                        <a href="shop-owners.html" class="nav-link" data-key="t-shop-owners">
+                                            Shop Owners
+                                        </a>
+                                    </li>
+                 
+                                    <li class="nav-item">
+                                        <a href="verification.html" class="nav-link" data-key="t-verification-requests">
+                                            Verification Requests
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="blocked-user.html" class="nav-link" data-key="t-blocked-users">
+                                            Blocked Users
+                                        </a>
+                                    </li>
+                 
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarlist" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarlist">
+                                <i class="ri-list-unordered"></i>
+                                <span data-key="t-list">Listings</span>
+                            </a>
+                 
+                            <div class="collapse menu-dropdown" id="sidebarlist">
+                                <ul class="nav nav-sm flex-column">
+                 
+                                    <li class="nav-item">
+                                        <a href="all-list.html" class="nav-link" data-key="t-all-listings">
+                                            All listings
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pending-approval.html" class="nav-link" data-key="t-pending-approvals">
+                                            Pending Approvals
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="featured-list.html" class="nav-link" data-key="t-featured-listings">
+                                            Featured Listings
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="categories.html" class="nav-link" data-key="t-categories">
+                                            Categories
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Staff Management Section</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarStaff" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarStaff">
+                                <i class="ri-team-line"></i>
+                                <span data-key="t-list">Staff Management </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarStaff">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="employee.html" class="nav-link" data-key="t-notices">
+                                            Employees
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="permission.html" class="nav-link" data-key="t-emergency-contacts">
+                                            Roles & Permissions </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="activity-log.html" class="nav-link" data-key="t-announcements">
+                                            Activity Logs </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarAdvertisement" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarAdvertisement">
+                                <i class="ri-megaphone-line"></i>
+                                <span data-key="t-list">Advertisements </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarAdvertisement">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="all-ads.html" class="nav-link" data-key="t-all-ads">
+                                            All Advertisements
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="create-ads.html" class="nav-link" data-key="t-create-ad">
+                                            Create New Ad </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pending-ads.html" class="nav-link" data-key="t-pending-ad">
+                                            Pending Ads </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ad-slot-mngmnt.html" class="nav-link" data-key="t-pending-ad">
+                                            Ads Slots Management </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarOffer" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarOffer">
+                                <i class="ri-coupon-3-line"></i>
+                                <span data-key="t-list">Offers & Promotions </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarOffer">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="all-offer.html" class="nav-link" data-key="t-all-offers">
+                                            All Offers
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="add-offers.html" class="nav-link" data-key="t-create-offer">
+                                            Create Offer </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="sheduled-offer.html" class="nav-link" data-key="t-scheduled-offers">
+                                            Scheduled Offers </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarReward" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarReward">
+                                <i class="ri-trophy-line"></i>
+                                <span data-key="t-list">Rewards System </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarReward">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="daily-challenge.html" class="nav-link" data-key="t-challenges">
+                                            Daily Challenges
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="spin-win.html" class="nav-link" data-key="t-spin">
+                                            Spin & Win Setup </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="scratch-card.html" class="nav-link" data-key="t-scratch-cards">
+                                            Scratch Cards </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="reward.html" class="nav-link" data-key="t-reward-rules">
+                                            Reward Rules </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarGift" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarGift">
+                                <i class="ri-gift-line"></i>
+                                <span data-key="t-list"> Gift Cards & Wallet </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarGift">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="gift-card-mngmnt.html" class="nav-link" data-key="t-gift-card-management">
+                                            Gift Card Management
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="wallet-transaction.html" class="nav-link" data-key="t-wallet-transactions">
+                                            Wallet Transactions </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="redemption-req.html" class="nav-link" data-key="t-redemption">
+                                            Redemption Requests </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Information Section</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarInfo" data-bs-toggle="collapse" role="button"
+                                aria-expanded="true" aria-controls="sidebarInfo">
+                                <i class="ri-information-line"></i>
+                                <span data-key="t-list">Information & Notices </span>
+                            </a>
+                            <div class="collapse menu-dropdown show" id="sidebarInfo">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="panchayath-notices.html" class="nav-link" data-key="t-notices">
+                                            Panchayath Notices
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="emergency-contacts.html" class="nav-link active" data-key="t-emergency-contacts">
+                                            Emergency Contacts </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-announcements">
+                                            Local Announcements </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#">
+                                <i class="ri-file-chart-line"></i> <span data-key="t-report">Reports</span></a>
+                        </li>
+                        </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Profile & Settings</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarProfile" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarProfile">
+                                <i class="ri-settings-3-line"></i>
+                                <span data-key="t-list">Settings</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarProfile">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="auth-signin-basic.html" class="nav-link" data-key="t-notices">
+                                            General Settings
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-emergency-contacts">
+                                            App Configuration </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-announcements">
+                                            Panchayath / Locality Setup </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-announcements">
+                                            Notification Settings</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="pages-profile-settings.html">
+                                <i class="ri-file-chart-line"></i> <span data-key="t-profile">Profile</span></a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="auth-logout-basic.html">
+                                <i class="ri-file-chart-line"></i> <span data-key="t-logout">Logout</span></a>
+                        </li>
+                        </li>
+                 
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <div class="vertical-overlay"></div>
+         
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- Page Title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+                                <h4 class="mb-sm-0">Emergency Contacts</h4>
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Information & Notices</a></li>
+                                        <li class="breadcrumb-item active">Emergency Contacts</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="position-relative me-3">
+                                    <input type="text" class="form-control" placeholder="Search contacts..." id="contactSearch">
+                                    <span class="mdi mdi-magnify position-absolute end-0 top-50 translate-middle-y pe-3 text-muted"></span>
+                                </div>
+                                <select class="form-select w-auto" id="typeFilter">
+                                    <option>All Types</option>
+                                    <option>Police</option>
+                                    <option>Hospital</option>
+                                    <option>Fire</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addContactModal">
+                                <i class="ri-add-line me-1"></i> Add New Contact
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">
+                                <i class="ri-download-line me-1"></i> Export List
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Emergency Contacts Table -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1">Emergency Contact Directory</h4>
+                                    <div class="flex-shrink-0">
+                                        <small class="text-muted">Total Contacts: <span id="totalContacts">5</span></small>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive table-card">
+                                        <table class="table table-borderless table-centered align-middle table-nowrap mb-0" id="contactsTable">
+                                            <thead class="text-muted table-light">
+                                                <tr>
+                                                    <th scope="col">Service Type</th>
+                                                    <th scope="col">Name/Department</th>
+                                                    <th scope="col">Contact Number</th>
+                                                    <th scope="col">Address/Location</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <span class="avatar-xs">
+                                                                    <span class="avatar-title bg-danger-subtle text-danger rounded-circle fs-3">
+                                                                        <i class="ri-police-car-line"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <span class="fw-semibold">Police</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Local Police Station</td>
+                                                    <td><a href="tel:+91100100" class="text-decoration-none">100</a></td>
+                                                    <td>Main Road, Village Center, Panchayath Area</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewContactModal" onclick="loadContactData(1)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editContactModal" onclick="loadContactData(1)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <span class="avatar-xs">
+                                                                    <span class="avatar-title bg-primary-subtle text-primary rounded-circle fs-3">
+                                                                        <i class="ri-hospital-line"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <span class="fw-semibold">Hospital</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>General Hospital</td>
+                                                    <td><a href="tel:+91108108" class="text-decoration-none">108</a></td>
+                                                    <td>Hospital Lane, Near Market, Panchayath Area</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewContactModal" onclick="loadContactData(2)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editContactModal" onclick="loadContactData(2)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <span class="avatar-xs">
+                                                                    <span class="avatar-title bg-warning-subtle text-warning rounded-circle fs-3">
+                                                                        <i class="ri-fire-line"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <span class="fw-semibold">Fire</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Fire Department Station</td>
+                                                    <td><a href="tel:+91101101" class="text-decoration-none">101</a></td>
+                                                    <td>Station Road, Industrial Zone, Panchayath Area</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewContactModal" onclick="loadContactData(3)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editContactModal" onclick="loadContactData(3)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <span class="avatar-xs">
+                                                                    <span class="avatar-title bg-info-subtle text-info rounded-circle fs-3">
+                                                                        <i class="ri-ambulance-line"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <span class="fw-semibold">Ambulance</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Emergency Ambulance Service</td>
+                                                    <td><a href="tel:+91102102" class="text-decoration-none">102</a></td>
+                                                    <td>Linked to General Hospital, Panchayath Area</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Active</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewContactModal" onclick="loadContactData(4)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editContactModal" onclick="loadContactData(4)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <span class="avatar-xs">
+                                                                    <span class="avatar-title bg-secondary-subtle text-secondary rounded-circle fs-3">
+                                                                        <i class="ri-customer-service-line"></i>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <span class="fw-semibold">Other</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Panchayath Helpline</td>
+                                                    <td><a href="tel:+914012345678" class="text-decoration-none">+91 40 1234 5678</a></td>
+                                                    <td>Panchayath Office, Village Square, Panchayath Area</td>
+                                                    <td><span class="badge bg-warning-subtle text-warning">Pending</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-info me-1" data-bs-toggle="modal" data-bs-target="#viewContactModal" onclick="loadContactData(5)">View</button>
+                                                        <button class="btn btn-sm btn-outline-warning me-1" data-bs-toggle="modal" data-bs-target="#editContactModal" onclick="loadContactData(5)">Edit</button>
+                                                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Admin Panel.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Add New Contact Modal -->
+    <div class="modal fade" id="addContactModal" tabindex="-1" aria-labelledby="addContactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addContactModalLabel">Add New Emergency Contact</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addContactForm">
+                        <div class="mb-3">
+                            <label for="contactType" class="form-label">Service Type</label>
+                            <select class="form-select" id="contactType" required>
+                                <option>Police</option>
+                                <option>Hospital</option>
+                                <option>Fire</option>
+                                <option>Ambulance</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Name/Department</label>
+                            <input type="text" class="form-control" id="contactName" placeholder="Enter name or department" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="contactNumber" placeholder="Enter phone number" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactAddress" class="form-label">Address/Location</label>
+                            <textarea class="form-control" id="contactAddress" rows="2" placeholder="Enter address or location" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactStatus" class="form-label">Status</label>
+                            <select class="form-select" id="contactStatus">
+                                <option>Active</option>
+                                <option>Pending</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveContact()">Save Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- View Contact Modal -->
+    <div class="modal fade" id="viewContactModal" tabindex="-1" aria-labelledby="viewContactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewContactModalLabel">View Emergency Contact</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="viewContactDetails">
+                        <!-- Dynamic content loaded here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Contact Modal -->
+    <div class="modal fade" id="editContactModal" tabindex="-1" aria-labelledby="editContactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editContactModalLabel">Edit Emergency Contact</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editContactForm">
+                        <!-- Dynamic content loaded here -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="updateContact()">Update Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script>
+        // Sample data for modals
+        const contactData = {
+            1: { type: 'Police', name: 'Local Police Station', number: '100', address: 'Main Road, Village Center, Panchayath Area', status: 'Active' },
+            2: { type: 'Hospital', name: 'General Hospital', number: '108', address: 'Hospital Lane, Near Market, Panchayath Area', status: 'Active' },
+            3: { type: 'Fire', name: 'Fire Department Station', number: '101', address: 'Station Road, Industrial Zone, Panchayath Area', status: 'Active' },
+            4: { type: 'Ambulance', name: 'Emergency Ambulance Service', number: '102', address: 'Linked to General Hospital, Panchayath Area', status: 'Active' },
+            5: { type: 'Other', name: 'Panchayath Helpline', number: '+91 40 1234 5678', address: 'Panchayath Office, Village Square, Panchayath Area', status: 'Pending' }
+        };
+
+        function loadContactData(id) {
+            const data = contactData[id];
+            if (document.getElementById('viewContactDetails')) {
+                document.getElementById('viewContactDetails').innerHTML = `
+                    <p><strong>Type:</strong> ${data.type}</p>
+                    <p><strong>Name:</strong> ${data.name}</p>
+                    <p><strong>Number:</strong> <a href="tel:${data.number}">${data.number}</a></p>
+                    <p><strong>Address:</strong> ${data.address}</p>
+                    <p><strong>Status:</strong> <span class="badge bg-${data.status === 'Active' ? 'success' : 'warning'}-subtle text-${data.status.toLowerCase()}">${data.status}</span></p>
+                `;
+            }
+            if (document.getElementById('editContactForm')) {
+                document.getElementById('editContactForm').innerHTML = `
+                    <input type="hidden" id="editId" value="${id}">
+                    <div class="mb-3">
+                        <label for="editType" class="form-label">Service Type</label>
+                        <select class="form-select" id="editType" required>${getTypeOptions(data.type)}</select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editName" class="form-label">Name/Department</label>
+                        <input type="text" class="form-control" id="editName" value="${data.name}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editNumber" class="form-label">Contact Number</label>
+                        <input type="tel" class="form-control" id="editNumber" value="${data.number}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editAddress" class="form-label">Address/Location</label>
+                        <textarea class="form-control" id="editAddress" rows="2" required>${data.address}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editStatus" class="form-label">Status</label>
+                        <select class="form-select" id="editStatus">
+                            <option ${data.status === 'Active' ? 'selected' : ''}>Active</option>
+                            <option ${data.status === 'Pending' ? 'selected' : ''}>Pending</option>
+                        </select>
+                    </div>
+                `;
+            }
+        }
+
+        function getTypeOptions(selected) {
+            const options = ['Police', 'Hospital', 'Fire', 'Ambulance', 'Other'];
+            return options.map(opt => `<option ${opt === selected ? 'selected' : ''}>${opt}</option>`).join('');
+        }
+
+        function saveContact() {
+            // Simulate save
+            alert('Contact saved successfully!');
+            bootstrap.Modal.getInstance(document.getElementById('addContactModal')).hide();
+        }
+
+        function updateContact() {
+            // Simulate update
+            alert('Contact updated successfully!');
+            bootstrap.Modal.getInstance(document.getElementById('editContactModal')).hide();
+        }
+    </script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
