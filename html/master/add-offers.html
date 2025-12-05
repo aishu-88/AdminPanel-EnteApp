@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+<head>
+    <meta charset="utf-8" />
+    <title>Create Offer - Offers & Promotions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Offers & Promotions Management - Create Offer" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link href="assets/libs/jsvectormap/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/layout.js"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="index.html" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+                            <a href="index.html" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+                        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger material-shadow-none" id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                        <!-- App Search-->
+                        <form class="app-search d-none d-md-block">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Search..." autocomplete="off" id="search-options" value="">
+                                <span class="mdi mdi-magnify search-widget-icon"></span>
+                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                    <span class="text-start ms-xl-2">
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="dropdown-header">Welcome Anna!</h6>
+                                <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                                <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="pages-profile-settings.html"><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
+                                <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+   
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu">
+                    </div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="index.html">
+                                <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span></a>
+                        </li> <!-- end Dashboard Menu -->
+                 
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">User Management</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarUser" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarUser">
+                                <i class="ri-account-circle-line"></i>
+                                <span data-key="t-User">Users</span>
+                            </a>
+                 
+                            <div class="collapse menu-dropdown" id="sidebarUser">
+                                <ul class="nav nav-sm flex-column">
+                 
+                                    <li class="nav-item">
+                                        <a href="all-users.html" class="nav-link" data-key="t-allusers">
+                                            All Users
+                                        </a>
+                                    </li>
+                 
+                                    <li class="nav-item">
+                                        <a href="service-provider.html" class="nav-link" data-key="t-providers">
+                                            Service Providers
+                                        </a>
+                                    </li>
+                 
+                                    <li class="nav-item">
+                                        <a href="shop-owners.html" class="nav-link" data-key="t-shop-owners">
+                                            Shop Owners
+                                        </a>
+                                    </li>
+                 
+                                    <li class="nav-item">
+                                        <a href="verification.html" class="nav-link" data-key="t-verification-requests">
+                                            Verification Requests
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="blocked-user.html" class="nav-link" data-key="t-blocked-users">
+                                            Blocked Users
+                                        </a>
+                                    </li>
+                 
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarlist" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarlist">
+                                <i class="ri-list-unordered"></i>
+                                <span data-key="t-list">Listings</span>
+                            </a>
+                 
+                            <div class="collapse menu-dropdown" id="sidebarlist">
+                                <ul class="nav nav-sm flex-column">
+                 
+                                    <li class="nav-item">
+                                        <a href="all-list.html" class="nav-link" data-key="t-all-listings">
+                                            All listings
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pending-approval.html" class="nav-link" data-key="t-pending-approvals">
+                                            Pending Approvals
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="featured-list.html" class="nav-link" data-key="t-featured-listings">
+                                            Featured Listings
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="categories.html" class="nav-link" data-key="t-categories">
+                                            Categories
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Staff Management Section</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarStaff" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarStaff">
+                                <i class="ri-team-line"></i>
+                                <span data-key="t-list">Staff Management </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarStaff">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="employees-list.html" class="nav-link" data-key="t-notices">
+                                            Employees
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="roles-permissions.html" class="nav-link" data-key="t-emergency-contacts">
+                                            Roles & Permissions </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="activity-logs.html" class="nav-link" data-key="t-announcements">
+                                            Activity Logs </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarAdvertisement" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarAdvertisement">
+                                <i class="ri-megaphone-line"></i>
+                                <span data-key="t-list">Advertisements </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarAdvertisement">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="all-ads.html" class="nav-link" data-key="t-all-ads">
+                                            All Advertisements
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="create-ads.html" class="nav-link" data-key="t-create-ad">
+                                            Create New Ad </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pending-ads.html" class="nav-link" data-key="t-pending-ad">
+                                            Pending Ads </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ads-slots.html" class="nav-link" data-key="t-pending-ad">
+                                            Ads Slots Management </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarOffer" data-bs-toggle="collapse" role="button"
+                                aria-expanded="true" aria-controls="sidebarOffer">
+                                <i class="ri-coupon-3-line"></i>
+                                <span data-key="t-list">Offers & Promotions </span>
+                            </a>
+                            <div class="collapse menu-dropdown show" id="sidebarOffer">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="all-offers.html" class="nav-link" data-key="t-all-offers">
+                                            All Offers
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="create-offer.html" class="nav-link active" data-key="t-create-offer">
+                                            Create Offer </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="scheduled-offers.html" class="nav-link" data-key="t-scheduled-offers">
+                                            Scheduled Offers </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarReward" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarReward">
+                                <i class="ri-trophy-line"></i>
+                                <span data-key="t-list">Rewards System </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarReward">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="auth-signin-basic.html" class="nav-link" data-key="t-challenges">
+                                            Daily Challenges
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-spin">
+                                            Spin & Win Setup </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-scratch-cards">
+                                            Scratch Cards </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-reward-rules">
+                                            Reward Rules </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                 
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarGift" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarGift">
+                                <i class="ri-gift-line"></i>
+                                <span data-key="t-list"> Gift Cards & Wallet </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarGift">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="auth-signin-basic.html" class="nav-link" data-key="t-gift-card-management">
+                                            Gift Card Management
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-wallet-transactions">
+                                            Wallet Transactions </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-redemption">
+                                            Redemption Requests </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Information Section</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarInfo" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarInfo">
+                                <i class="ri-information-line"></i>
+                                <span data-key="t-list">Information & Notices </span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarInfo">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="auth-signin-basic.html" class="nav-link" data-key="t-notices">
+                                            Panchayath Notices
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-emergency-contacts">
+                                            Emergency Contacts </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-announcements">
+                                            Local Announcements </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="#">
+                                    <i class="ri-file-chart-line"></i> <span data-key="t-report">Reports</span></a>
+                            </li>
+                            </li>
+                            <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Profile & Settings</span></li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="#sidebarProfile" data-bs-toggle="collapse" role="button"
+                                    aria-expanded="false" aria-controls="sidebarProfile">
+                                    <i class="ri-settings-3-line"></i>
+                                    <span data-key="t-list">Settings</span>
+                                </a>
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="auth-signin-basic.html" class="nav-link" data-key="t-notices">
+                                                General Settings
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link" data-key="t-emergency-contacts">
+                                                App Configuration </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link" data-key="t-announcements">
+                                                Panchayath / Locality Setup </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link" data-key="t-announcements">
+                                                Notification Settings</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="pages-profile-settings.html">
+                                    <i class="ri-file-chart-line"></i> <span data-key="t-profile">Profile</span></a>
+                            </li>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="auth-logout-basic.html">
+                                    <i class="ri-file-chart-line"></i> <span data-key="t-logout">Logout</span></a>
+                            </li>
+                            </li>
+                 
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <div class="vertical-overlay"></div>
+        
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- Page Title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+                                <h4 class="mb-sm-0">Create Offer</h4>
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Offers & Promotions</a></li>
+                                        <li class="breadcrumb-item active">Create Offer</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Create New Offer Form -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1">Add New Offer</h4>
+                                    <div class="flex-shrink-0">
+                                        <a href="all-offers.html" class="btn btn-soft-secondary btn-sm material-shadow-none">
+                                            <i class="ri-arrow-left-line align-middle"></i> Back to All Offers
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form id="createOfferForm" action="#" method="POST" enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="offerTitle" class="form-label">Offer Title</label>
+                                                    <input type="text" class="form-control" id="offerTitle" name="offerTitle" placeholder="Enter offer title" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="discountType" class="form-label">Discount Type</label>
+                                                    <select class="form-select" id="discountType" name="discountType" required>
+                                                        <option value="">Select Type</option>
+                                                        <option value="percentage">Percentage (%)</option>
+                                                        <option value="fixed">Fixed Amount</option>
+                                                        <option value="bogo">Buy One Get One (BOGO)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="discountValue" class="form-label">Discount Value</label>
+                                                    <input type="number" class="form-control" id="discountValue" name="discountValue" placeholder="e.g., 20 for 20%" step="0.01" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="applicableTo" class="form-label">Applicable To</label>
+                                                    <select class="form-select" id="applicableTo" name="applicableTo" multiple>
+                                                        <option value="all">All Products/Services</option>
+                                                        <option value="electronics">Electronics</option>
+                                                        <option value="groceries">Groceries</option>
+                                                        <option value="apparel">Apparel</option>
+                                                    </select>
+                                                    <small class="text-muted">Hold Ctrl/Cmd to select multiple</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="startDate" class="form-label">Start Date</label>
+                                                    <input type="date" class="form-control" id="startDate" name="startDate" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="endDate" class="form-label">End Date</label>
+                                                    <input type="date" class="form-control" id="endDate" name="endDate" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="offerDescription" class="form-label">Description</label>
+                                            <textarea class="form-control" id="offerDescription" name="offerDescription" rows="3" placeholder="Enter offer description"></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="offerImage" class="form-label">Offer Image Upload</label>
+                                                    <input type="file" class="form-control" id="offerImage" name="offerImage" accept="image/*">
+                                                    <small class="text-muted">Upload image for offer banner (Max 5MB)</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="targetUrl" class="form-label">Target URL (Optional)</label>
+                                                    <input type="url" class="form-control" id="targetUrl" name="targetUrl" placeholder="https://example.com/offer-details">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="offerStatus" class="form-label">Initial Status</label>
+                                            <select class="form-select" id="offerStatus" name="offerStatus">
+                                                <option value="active">Active</option>
+                                                <option value="draft">Draft</option>
+                                                <option value="scheduled">Scheduled</option>
+                                            </select>
+                                        </div>
+                                        <div class="text-end">
+                                            <button type="submit" class="btn btn-primary">Create Offer</button>
+                                            <a href="all-offers.html" class="btn btn-secondary ms-2">Cancel</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Admin Panel.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

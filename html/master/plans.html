@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Plans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="plans" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link href="assets/libs/jsvectormap/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/layout.js"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+    <div class="layout-width">
+        <div class="navbar-header">
+            <div class="d-flex">
+                <!-- LOGO -->
+                <div class="navbar-brand-box horizontal-logo">
+                    <a href="index.html" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-dark.png" alt="" height="17">
+                        </span>
+                    </a>
+
+                    <a href="index.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-light.png" alt="" height="17">
+                        </span>
+                    </a>
+                </div>
+
+                <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger material-shadow-none" id="topnav-hamburger-icon">
+                    <span class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+
+                <!-- App Search-->
+                <form class="app-search d-none d-md-block">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search..." autocomplete="off" id="search-options" value="">
+                        <span class="mdi mdi-magnify search-widget-icon"></span>
+                        <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <div class="ms-1 header-item d-none d-sm-flex">
+                    <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle light-dark-mode">
+                        <i class='bx bx-moon fs-22'></i>
+                    </button>
+                </div>
+
+                <div class="dropdown ms-sm-3 header-item topbar-user">
+                    <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="d-flex align-items-center">
+                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                            <span class="text-start ms-xl-2">
+                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
+                            </span>
+                        </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <h6 class="dropdown-header">Welcome Anna!</h6>
+                        <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                        <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="pages-profile-settings.html"><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
+                        <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+    
+            <div id="scrollbar">
+                <div class="container-fluid">
+
+
+                    <div id="two-column-menu">
+                    </div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="index.html">
+                            <i class="ri-dashboard-2-line" ></i> <span data-key="t-dashboards">Dashboards</span></a>
+                            <!-- <div class="collapse menu-dropdown" id="sidebarDashboards">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="dashboard-analytics.html" class="nav-link" data-key="t-analytics"> Analytics </a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </li> <!-- end Dashboard Menu -->
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-apps-2-line"></i> <span data-key="t-apps">Services</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarApps">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        
+                                        <a href="#sidebarEcommerce" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEcommerce" data-key="t-ecommerce">
+                                            Vendor
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarEcommerce">
+                                            
+                                            <ul class="nav nav-sm flex-column">
+                                                 <li class="nav-item">
+                                                    <a href="plans.html" class="nav-link" data-key="t-products">  <i class="ri-file-list-3-line"></i> Plans </a>
+                                                </li>
+                                                 <li class="nav-item">
+                                                    <a href="add-service.html" class="nav-link" data-key="t-create-product"> <i class="ri-add-circle-line"></i> Add Vendors </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="service-list.html" class="nav-link" data-key="t-products">  <i class="ri-list-check"></i> Vendors List </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <!-- <li class="nav-item">
+                                        <a href="#sidebarProjects" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects" data-key="t-projects">
+                                            Offers
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarProjects">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="offer-list.html" class="nav-link" data-key="t-list"> <i class="ri-price-tag-3-line"></i> Offers List
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="add-offers.html" class="nav-link" data-key="t-create-project"> <i class="ri-price-tag-add-line"></i> Add Offers </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                                aria-controls="sidebarAuth">
+                                <i class="ri-account-circle-line"></i>
+                                <span data-key="t-authentication">Authentication</span>
+                            </a>
+                        
+                            <div class="collapse menu-dropdown" id="sidebarAuth">
+                                <ul class="nav nav-sm flex-column">
+                        
+                                    <li class="nav-item">
+                                        <a href="auth-signin-basic.html" class="nav-link" data-key="t-signin">
+                                            Sign In
+                                        </a>
+                                    </li>
+                        
+                                    <li class="nav-item">
+                                        <a href="auth-signup-basic.html" class="nav-link" data-key="t-signup">
+                                            Sign Up
+                                        </a>
+                                    </li>
+                        
+                                    <li class="nav-item">
+                                        <a href="auth-pass-reset-basic.html" class="nav-link" data-key="t-password-reset">
+                                            Password Reset
+                                        </a>
+                                    </li>
+                        
+                                    <li class="nav-item">
+                                        <a href="auth-logout-basic.html" class="nav-link" data-key="t-logout">
+                                            Logout
+                                        </a>
+                                    </li>
+                        
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
+                                <i class="ri-pages-line"></i> <span data-key="t-pages">Pages</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarPages">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="#sidebarProfile" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProfile" data-key="t-profile"> Profile
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarProfile">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="pages-profile-settings.html" class="nav-link" data-key="t-settings"> Settings </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a href="pages-gallery.html" class="nav-link" data-key="t-gallery"> Gallery </a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#">
+                                <i class="ri-megaphone-line"></i> <span data-key="t-faqs">Announcements / Notices</span>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link menu-link" href="#">
+                                <i class="ri-alarm-warning-line"></i> <span data-key="t-faqs">Emergency Contacts</span>
+                            </a></li>
+                             <li class="nav-item">
+                            <a class="nav-link menu-link" href="#">
+                                <i class="ri-advertisement-line"></i> <span data-key="t-faqs">Advertisement Banners</span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <div class="vertical-overlay"></div>
+        
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+                                <h4 class="mb-sm-0">Plans</h4>
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                        <li class="breadcrumb-item active">Plans</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- Recent Activity & Quick Actions -->
+                    <section class="plans-section">
+    <div class="container">
+
+        <h2 class="section-title">Vendor Subscription Plans</h2>
+        <p class="section-subtitle">Choose a plan based on price, duration & visibility priority</p>
+
+        <div class="plans-grid">
+
+            <!-- ===== Plan Card 1 ===== -->
+            <div class="plan-card">
+                <h3>Basic Plan</h3>
+                <p class="plan-sub">Entry-level visibility for new vendors</p>
+
+                <button class="join-btn">Select Plan</button>
+
+                <ul class="plan-features">
+                    <li>Price: ₹499</li>
+                    <li>Validity: 30 Days</li>
+                    <li>Visibility Priority: Low</li>
+                    <li>Images Allowed: 3</li>
+                    <li>Featured Listing: No</li>
+                </ul>
+            </div>
+
+            <!-- ===== Plan Card 2 ===== -->
+            <div class="plan-card">
+                <h3>Standard Plan</h3>
+                <p class="plan-sub">Best for small businesses</p>
+
+                <button class="join-btn">Select Plan</button>
+
+                <ul class="plan-features">
+                    <li>Price: ₹999</li>
+                    <li>Validity: 60 Days</li>
+                    <li>Visibility Priority: Medium</li>
+                    <li>Images Allowed: 6</li>
+                    <li>Featured Listing: Yes (1 Week)</li>
+                </ul>
+            </div>
+
+            <!-- ===== Plan Card 3 ===== -->
+            <div class="plan-card">
+                <h3>Premium Plan</h3>
+                <p class="plan-sub">High visibility & maximum exposure</p>
+
+                <button class="join-btn">Select Plan</button>
+
+                <ul class="plan-features">
+                    <li>Price: ₹1999</li>
+                    <li>Validity: 90 Days</li>
+                    <li>Visibility Priority: High</li>
+                    <li>Images Allowed: 10</li>
+                    <li>Featured Listing: Yes (Full Duration)</li>
+                </ul>
+            </div>
+
+            <!-- You can duplicate this block up to 10 plans -->
+        </div>
+
+    </div>
+</section>
+
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Employee Panel.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Design & Develop by Themesbrand
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <!-- Counter Up -->
+    <script>
+        // Counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.counter-value');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target').replace(/,/g, ''));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                    }
+                };
+                
+                updateCounter();
+            });
+        });
+    </script>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

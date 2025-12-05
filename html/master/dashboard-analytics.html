@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Staff Management Dashboard | Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Staff Management Dashboard" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link href="assets/libs/jsvectormap/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/layout.js"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+    <div class="layout-width">
+        <div class="navbar-header">
+            <div class="d-flex">
+                <!-- LOGO -->
+                <div class="navbar-brand-box horizontal-logo">
+                    <a href="index.html" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-dark.png" alt="" height="17">
+                        </span>
+                    </a>
+
+                    <a href="index.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-light.png" alt="" height="17">
+                        </span>
+                    </a>
+                </div>
+
+                <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger material-shadow-none" id="topnav-hamburger-icon">
+                    <span class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+
+                <!-- App Search-->
+                <form class="app-search d-none d-md-block">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search..." autocomplete="off" id="search-options" value="">
+                        <span class="mdi mdi-magnify search-widget-icon"></span>
+                        <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <div class="ms-1 header-item d-none d-sm-flex">
+                    <button type="button" class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle light-dark-mode">
+                        <i class='bx bx-moon fs-22'></i>
+                    </button>
+                </div>
+
+                <div class="dropdown ms-sm-3 header-item topbar-user">
+                    <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="d-flex align-items-center">
+                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                            <span class="text-start ms-xl-2">
+                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
+                                <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
+                            </span>
+                        </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <h6 class="dropdown-header">Welcome Anna!</h6>
+                        <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                        <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="pages-profile-settings.html"><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
+                        <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+    
+            <div id="scrollbar">
+                <div class="container-fluid">
+
+
+                    <div id="two-column-menu">
+                    </div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="dashboard-analytics.html">
+    <i class="ri-dashboard-2-line" href="dashboard-analytics.html"></i> 
+    <span data-key="t-dashboards">Dashboards</span>
+</a>
+                            <!-- <div class="collapse menu-dropdown" id="sidebarDashboards">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="dashboard-analytics.html" class="nav-link" data-key="t-analytics"> Analytics </a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </li> <!-- end Dashboard Menu -->
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarApps">
+                                <i class="ri-apps-2-line"></i> <span data-key="t-apps">Services</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarApps">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        
+                                        <a href="#sidebarEcommerce" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEcommerce" data-key="t-ecommerce">
+                                            Vendor
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarEcommerce">
+                                            
+                                            <ul class="nav nav-sm flex-column">
+                                                 <li class="nav-item">
+                                                    <a href="#" class="nav-link" data-key="t-products">  <i class="ri-file-list-3-line"></i> Plans </a>
+                                                </li>
+                                                 <li class="nav-item">
+                                                    <a href="add-service.html" class="nav-link" data-key="t-create-product"> <i class="ri-add-circle-line"></i> Add service </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="service-list.html" class="nav-link" data-key="t-products">  <i class="ri-list-check"></i> Services List </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="apps-ecommerce-product-details.html" class="nav-link" data-key="t-product-Details"><i class="ri-file-info-line"></i> Service Details</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#sidebarProjects" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProjects" data-key="t-projects">
+                                            Offers
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarProjects">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="offer-list.html" class="nav-link" data-key="t-list"> <i class="ri-price-tag-3-line"></i> Offers List
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="add-offers.html" class="nav-link" data-key="t-create-project"> <i class="ri-price-tag-add-line"></i> Add Offers </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
+                                <i class="ri-account-circle-line"></i> <span data-key="t-authentication">Authentication</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarAuth">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignIn" data-key="t-signin"> Sign In
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarSignIn">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="auth-signin-basic.html" class="nav-link" data-key="t-basic"> Basic
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="auth-signin-cover.html" class="nav-link" data-key="t-cover"> Cover
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignUp" data-key="t-signup"> Sign Up
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarSignUp">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="auth-signup-basic.html" class="nav-link" data-key="t-basic"> Basic
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="auth-signup-cover.html" class="nav-link" data-key="t-cover"> Cover
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="#sidebarResetPass" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarResetPass" data-key="t-password-reset">
+                                            Password Reset
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarResetPass">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="auth-pass-reset-basic.html" class="nav-link" data-key="t-basic">
+                                                        Basic </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="auth-pass-reset-cover.html" class="nav-link" data-key="t-cover">
+                                                        Cover </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                     <li class="nav-item">
+                                        <a href="#sidebarLogout" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLogout" data-key="t-logout"> Logout
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarLogout">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="auth-logout-basic.html" class="nav-link" data-key="t-basic"> Basic
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="auth-logout-cover.html" class="nav-link" data-key="t-cover"> Cover
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
+                                <i class="ri-pages-line"></i> <span data-key="t-pages">Pages</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarPages">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="#sidebarProfile" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProfile" data-key="t-profile"> Profile
+                                        </a>
+                                        <div class="collapse menu-dropdown" id="sidebarProfile">
+                                            <ul class="nav nav-sm flex-column">
+                                                <li class="nav-item">
+                                                    <a href="pages-profile.html" class="nav-link" data-key="t-simple-page">
+                                                        Simple Page </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="pages-profile-settings.html" class="nav-link" data-key="t-settings"> Settings </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a href="pages-gallery.html" class="nav-link" data-key="t-gallery"> Gallery </a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#">
+                                <i class="ri-megaphone-line"></i> <span data-key="t-faqs">Announcements / Notices</span>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link menu-link" href="#">
+                                <i class="ri-alarm-warning-line"></i> <span data-key="t-faqs">Emergency Contacts</span>
+                            </a></li>
+                             <li class="nav-item">
+                            <a class="nav-link menu-link" href="#">
+                                <i class="ri-advertisement-line"></i> <span data-key="t-faqs">Advertisement Banners</span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <div class="vertical-overlay"></div>
+        
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+                                <h4 class="mb-sm-0">Staff Management Dashboard</h4>
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                        <li class="breadcrumb-item active">Staff Management</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vendor Statistics Cards -->
+                    <div class="row">
+                        <!-- Total Vendors -->
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Total Vendors</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div>
+                                            <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                <span class="counter-value" data-target="1,247">0</span>
+                                            </h4>
+                                            <a href="vendors-list.html" class="text-decoration-underline">View All Vendors</a>
+                                        </div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-success-subtle rounded fs-3">
+                                                <i class="bx bx-store text-success"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Vendors -->
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Active Vendors</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div>
+                                            <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                <span class="counter-value" data-target="1,098">0</span>
+                                            </h4>
+                                            <span class="badge bg-success-subtle text-success mb-0">
+                                                <i class="ri-arrow-up-line align-middle"></i> 88.1%
+                                            </span>
+                                        </div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-info-subtle rounded fs-3">
+                                                <i class="bx bx-check-circle text-info"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Approvals -->
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Pending Approvals</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div>
+                                            <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                <span class="counter-value" data-target="87">0</span>
+                                            </h4>
+                                            <a href="listings-approval.html" class="text-decoration-underline text-warning">Review Now</a>
+                                        </div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-warning-subtle rounded fs-3">
+                                                <i class="bx bx-time-five text-warning"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Active Offers -->
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Active Offers</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div>
+                                            <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                <span class="counter-value" data-target="342">0</span>
+                                            </h4>
+                                            <a href="offers-list.html" class="text-decoration-underline">Manage Offers</a>
+                                        </div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-primary-subtle rounded fs-3">
+                                                <i class="bx bx-purchase-tag text-primary"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Row - Advertisements -->
+                    <div class="row">
+                        <!-- Running Advertisements -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Running Advertisements</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div>
+                                            <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                <span class="counter-value" data-target="156">0</span>
+                                            </h4>
+                                            <a href="advertisements-list.html" class="text-decoration-underline">View Ads</a>
+                                        </div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-danger-subtle rounded fs-3">
+                                                <i class="bx bx-badge-check text-danger"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total Listings -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0">Total Listings</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div>
+                                            <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                <span class="counter-value" data-target="5,678">0</span>
+                                            </h4>
+                                            <span class="badge bg-success-subtle text-success mb-0">
+                                                <i class="ri-arrow-up-line align-middle"></i> 12.5% Growth
+                                            </span>
+                                        </div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-secondary-subtle rounded fs-3">
+                                                <i class="bx bx-list-ul text-secondary"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- New Vendors This Month -->
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0">New Vendors (This Month)</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div>
+                                            <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                <span class="counter-value" data-target="43">0</span>
+                                            </h4>
+                                            <span class="badge bg-success-subtle text-success mb-0">
+                                                <i class="ri-arrow-up-line align-middle"></i> 18.2% vs Last Month
+                                            </span>
+                                        </div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-success-subtle rounded fs-3">
+                                                <i class="bx bx-user-plus text-success"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity & Quick Actions -->
+                    <div class="row">
+                        <!-- Recent Vendor Applications -->
+                        <div class="col-xl-8">
+                            <div class="card">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1">Recent Vendor Applications</h4>
+                                    <div class="flex-shrink-0">
+                                        <button type="button" class="btn btn-soft-primary btn-sm material-shadow-none">
+                                            <i class="ri-file-list-3-line align-middle"></i> View All
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive table-card">
+                                        <table class="table table-borderless table-centered align-middle table-nowrap mb-0">
+                                            <thead class="text-muted table-light">
+                                                <tr>
+                                                    <th scope="col">Vendor Name</th>
+                                                    <th scope="col">Business Type</th>
+                                                    <th scope="col">Applied Date</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle" />
+                                                            </div>
+                                                            <div class="flex-grow-1">Tech Solutions Ltd</div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Electronics</td>
+                                                    <td>19 Nov, 2025</td>
+                                                    <td><span class="badge bg-warning-subtle text-warning">Pending</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Approve</button>
+                                                        <button class="btn btn-sm btn-danger">Reject</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle" />
+                                                            </div>
+                                                            <div class="flex-grow-1">Fashion Hub</div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Clothing</td>
+                                                    <td>18 Nov, 2025</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-info">View</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle" />
+                                                            </div>
+                                                            <div class="flex-grow-1">Home Decor Plus</div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Home & Garden</td>
+                                                    <td>17 Nov, 2025</td>
+                                                    <td><span class="badge bg-warning-subtle text-warning">Pending</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-success">Approve</button>
+                                                        <button class="btn btn-sm btn-danger">Reject</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-2">
+                                                                <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle" />
+                                                            </div>
+                                                            <div class="flex-grow-1">Sports Arena</div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Sports & Fitness</td>
+                                                    <td>16 Nov, 2025</td>
+                                                    <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-info">View</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="col-xl-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">Quick Actions</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary btn-label">
+                                            <i class="ri-user-add-line label-icon align-middle fs-16 me-2"></i> Add New Vendor
+                                        </button>
+                                        <button class="btn btn-info btn-label">
+                                            <i class="ri-file-list-3-line label-icon align-middle fs-16 me-2"></i> Review Listings
+                                        </button>
+                                        <button class="btn btn-success btn-label">
+                                            <i class="ri-price-tag-3-line label-icon align-middle fs-16 me-2"></i> Manage Offers
+                                        </button>
+                                        <button class="btn btn-warning btn-label">
+                                            <i class="ri-advertisement-line label-icon align-middle fs-16 me-2"></i> Ad Management
+                                        </button>
+                                        <button class="btn btn-secondary btn-label">
+                                            <i class="ri-file-chart-line label-icon align-middle fs-16 me-2"></i> Generate Report
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- System Alerts -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">System Alerts</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="alert alert-warning alert-border-left alert-dismissible fade show mb-3" role="alert">
+                                        <i class="ri-alert-line me-3 align-middle fs-16"></i><strong>Warning</strong> - 15 listings pending approval for more than 48 hours
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                    <div class="alert alert-info alert-border-left alert-dismissible fade show mb-0" role="alert">
+                                        <i class="ri-information-line me-3 align-middle fs-16"></i><strong>Info</strong> - 3 new vendor applications received today
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>document.write(new Date().getFullYear())</script> © Staff Management System.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Design & Develop by Themesbrand
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <!-- Counter Up -->
+    <script>
+        // Counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.counter-value');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target').replace(/,/g, ''));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString();
+                    }
+                };
+                
+                updateCounter();
+            });
+        });
+    </script>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
